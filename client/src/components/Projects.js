@@ -16,7 +16,7 @@ const Projects = () => {
       if (token) setIsAdmin(true);
 
       try {
-        const response = await fetch('http://localhost:3000/api/projects', {
+        const response = await fetch('https://eazybyts-portfolio-website.onrender.com/api/projects', {
           headers: {
             ...(token && { 'Authorization': `Bearer ${token}` }),
             'Content-Type': 'application/json'

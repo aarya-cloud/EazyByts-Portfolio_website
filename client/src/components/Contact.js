@@ -10,7 +10,7 @@ const Contact = () => {
 
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/contact")
+    fetch("https://eazybyts-portfolio-website.onrender.com/api/contact")
       .then((res) => res.json())
       .then((data) => {
         console.log("Fetched contact:", data);

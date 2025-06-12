@@ -8,7 +8,7 @@ const About = () => {
   const { theme, colorSchemes, colorScheme } = useContext(ThemeContext);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/about")
+    fetch("https://eazybyts-portfolio-website.onrender.com/api/about")
       .then((res) => res.json())
       .then((data) => {
         setAboutData(data[0]); // assuming single about object

@@ -31,7 +31,7 @@ function ProjectAdmin() {
     }
 
     try {
-      const response = await axios.get("http://localhost:3000/api/projects", {
+      const response = await axios.get("https://eazybyts-portfolio-website.onrender.com/api/projects", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setProjects(response.data);
@@ -61,12 +61,12 @@ function ProjectAdmin() {
 
     try {
       if (editingProjectId) {
-        await axios.put(`http://localhost:3000/api/projects/${editingProjectId}`, form, {
+        await axios.put(`https://eazybyts-portfolio-website.onrender.com/api/projects/${editingProjectId}`, form, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setMessage("Project updated successfully.");
       } else {
-        await axios.post("http://localhost:3000/api/projects", form, {
+        await axios.post("https://eazybyts-portfolio-website.onrender.com/api/projects", form, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setMessage("Project added successfully.");
@@ -110,7 +110,7 @@ function ProjectAdmin() {
     }
 
     try {
-      await axios.delete(`http://localhost:3000/api/projects/${id}`, {
+      await axios.delete(`https://eazybyts-portfolio-website.onrender.com/api/projects/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchProjects();

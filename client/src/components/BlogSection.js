@@ -21,7 +21,7 @@ const BlogSection = ({ token }) => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/blogs');
+        const response = await axios.get('https://eazybyts-portfolio-website.onrender.com/api/blogs');
         setBlogs(response.data);
       } catch (error) {
         console.error('Error fetching blogs:', error);
@@ -40,15 +40,15 @@ const BlogSection = ({ token }) => {
     setLoading(true);
     try {
       if (editingId) {
-        await axios.put(`http://localhost:3000/api/blogs/${editingId}`, newBlog, {
+        await axios.put(`https://eazybyts-portfolio-website.onrender.com/api/blogs/${editingId}`, newBlog, {
           headers: { Authorization: `Bearer ${token}` }
         });
       } else {
-        await axios.post('http://localhost:3000/api/blogs', newBlog, {
+        await axios.post('https://eazybyts-portfolio-website.onrender.com/api/blogs', newBlog, {
           headers: { Authorization: `Bearer ${token}` }
         });
       }
-      const response = await axios.get('http://localhost:3000/api/blogs');
+      const response = await axios.get('https://eazybyts-portfolio-website.onrender.com/api/blogs');
       setBlogs(response.data);
       setNewBlog({ title: '', content: '', author: '' });
       setEditingId(null);
@@ -64,10 +64,10 @@ const BlogSection = ({ token }) => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/api/blogs/${id}`, {
+      await axios.delete(`https://eazybyts-portfolio-website.onrender.com/api/blogs/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
-      const response = await axios.get('http://localhost:3000/api/blogs');
+      const response = await axios.get('https://eazybyts-portfolio-website.onrender.com/api/blogs');
       setBlogs(response.data);
     } catch (error) {
       console.error('Error deleting blog:', error);

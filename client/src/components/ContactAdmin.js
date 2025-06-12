@@ -20,7 +20,7 @@ const ContactAdmin = ({ token }) => {
     const fetchContactInfo = async () => {
       setLoading(true);
       try {
-        const response = await axios.get('http://localhost:3000/api/contact', {
+        const response = await axios.get('https://eazybyts-portfolio-website.onrender.com/api/contact', {
           headers: { Authorization: `Bearer ${token}` }
         });
         console.log('Fetched Contact Info:', response.data);
@@ -57,7 +57,7 @@ const ContactAdmin = ({ token }) => {
     setMessage('');
 
     try {
-      const response = await axios.put('http://localhost:3000/api/contact', contactInfo, {
+      const response = await axios.put('https://eazybyts-portfolio-website.onrender.com/api/contact', contactInfo, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setMessage(response.data.message);
